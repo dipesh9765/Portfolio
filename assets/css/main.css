@@ -3348,3 +3348,7 @@ body.is-touch .poptrox-popup .closer {
   height: auto; /* Maintain aspect ratio */
   object-fit: cover;
 }
+
+.error {
+  border: 2px solid red;
+}

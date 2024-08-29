@@ -10,6 +10,48 @@
     <meta name="keywords" content="Dipesh Marathe, Portfolio, Projects, Skills, Contact">
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
+        body {
+            margin: 0;
+        }
+
+        #header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: width 0.5s, height 0.5s, left 0.5s;
+        }
+
+        #header.shrink {
+            width: 38vw;
+            height: 100%;
+            left: 0;
+            transition: all 0.5s;
+        }
+
+        #main {
+            margin-left: 38vw;
+            padding: 20px;
+            padding-top: 100px;
+            transition: margin-left 0.5s;
+        }
+
+        #header.shrink~#main {
+            margin-left: 39vw;
+        }
+
+        .inner {
+            text-align: center;
+            max-width: 100%;
+            padding: 10px;
+        }
     </style>
 </head>
 
@@ -19,7 +61,7 @@
     <header id="header">
         <div class="inner">
             <a href="#" class="image avatar"><img src="images/avatar.jpg" alt="Dipesh Marathe" /></a>
-            <h1><strong>I am Dipesh Marathe</strong>, a passionate<br />
+            <h1>I am <strong>Dipesh Marathe</strong>, a passionate<br />
                 software developer and technology enthusiast.<br />
                 Check out my <a href="#portfolio">projects</a> and <a href="#contact">get in touch</a>.</h1>
         </div>
@@ -215,7 +257,21 @@
     </footer>
 
     <!-- Scripts -->
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.getElementById('header');
+            const main = document.getElementById('main');
 
+            if (window.scrollY > 10) {
+                header.classList.add('shrink');
+                main.classList.add('shrink');
+            } else {
+                header.classList.remove('shrink');
+                main.classList.remove('shrink');
+            }
+        });
+
+    </script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.poptrox.min.js"></script>
     <script src="assets/js/browser.min.js"></script>

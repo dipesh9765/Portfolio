@@ -89,7 +89,7 @@ const Contact = () => {
 
                         <div className="mt-8">
                             <a
-                                href="/assets/files/Dipesh Resume.pdf"
+                                href={`${import.meta.env.BASE_URL}assets/files/Dipesh_Resume.pdf`}
                                 download="Dipesh_Marathe_Resume.pdf"
                                 className="inline-block px-8 py-3 bg-secondary text-white rounded-full hover:bg-primary transition-colors shadow-lg"
                             >

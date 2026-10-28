@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/standards-gate.mjs\" check",
+            "timeout": 15,
+            "onFailure": "block",
+            "statusMessage": "Checking code-standards approval"
+          }
+        ]
+      }
+    ]
+  }
+}

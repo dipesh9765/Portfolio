@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Claude code-standards approval marker (local only)
+.claude/.standards-approved
